@@ -20,7 +20,7 @@ function changeImg() {
 
 
 // let gb=function gb() {
-//       window.open('isometric view.html','_self');
+//       window.open('miyapur.html','_self');
 // }
 
 function fb() {

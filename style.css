@@ -83,3 +83,22 @@ background-color: rgb(46, 50, 238);
 #back:hover{
     background-color: rgb(0, 0, 0);
 }
+#newPano{
+    height: 55px;
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgb(226, 12, 12);
+    color: white;
+    font-size: 16px;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;     
+}
+#newPano:hover{
+background-color: rgb(238, 46, 78);
+}

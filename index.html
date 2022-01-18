@@ -8,19 +8,30 @@
     <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- <script src="script.js"></script> -->
 
 </head>
 
 <body>
 
     <div id="panorama"></div>
-
-    <script>
+     <script>
         // Create viewer
         viewer = pannellum.viewer('panorama', {
-            "type": "equirectangular",
+
+
+        "default": {
+        "firstScene": "Main",
+        "sceneFadeDuration": 1000
+    },
+    
+    "scenes": {
+      
+        "Main": {  
+           "type": "equirectangular",
             "panorama": "2.jpg",
             "autoLoad": true,
+            "preview": "2.jpg",
             "hotSpots": [
                 {
                     "pitch": -31.5,
@@ -29,10 +40,14 @@
                     "createTooltipFunc": hotspot,
                     "createTooltipArgs": "&#x1F4CD; Ground Floor 8units &nbsp 2BHK-3BHK ",
                     "URL": "isometric view.html",
-                    "target":"_self"
-                },
-
-
+                },            
+                {
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Miyapur",
+                    "sceneId": "Miyapur"
+                },              
                 {
 
                     "pitch": -30.5,
@@ -119,8 +134,32 @@
                     "URL": "isometric view.html",
                     
                 }
+            ],
+      }, 
+    
+      
+      "Miyapur": {
+            "title": "Miyapur Pano",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "Location (2).jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Back to main view",
+                    "sceneId": "Main",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
             ]
-        });
+        }
+    }
+}
+
+          );
 
         // Hot spot creation function
         function hotspot(hotSpotDiv, args) {
@@ -133,8 +172,7 @@
             span.style.marginTop = -span.scrollHeight - 12 + 'px';
             clickHandlerFunc =arguments
         }
-    </script>
-
+        </script>
 </body>
 
 </html>
